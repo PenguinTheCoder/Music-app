@@ -1,0 +1,33 @@
+.title {
+    display: flex;
+    justify-content: center;
+}
+
+.card-wrapper {
+    display: flex;
+    flex-direction: column;
+    position:absolute;
+    justify-content: center;
+  border: 1px solid black;
+  padding: 1rem;
+  margin: 1rem;
+  transition: all 0.4s ease-in-out;
+}
+
+.edit {
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  border: 1px solid black;
+  border-radius: 32px;
+  padding: 0.5rem;
+  font-size: 18px;
+  margin: 0.5rem 0;
+  color: #000;
+  background: #fff;
+  background-color: rgb(245, 197, 24);
+}
+.card-button-wrapper {
+  transition: 1s ease;
+}
+

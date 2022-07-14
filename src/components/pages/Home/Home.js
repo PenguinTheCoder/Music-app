@@ -1,24 +1,41 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import "./Home.css";
+import SongCard from "../../SongCard/SongCard";
+
 
 
 const Home = () => {
+
+  const [songs, setSongs] = useState();
+
+  useEffect(() => {
+    fetch("https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart", {
+      method: "GET",
+      mode: "cors",
+    })
+      .then((response) => {
+        if (response.status >= 400) {
+          throw { error: "No songs found" };
+        }
+        return response.json();
+      })
+      .then((data) => setSongs(data)) 
+      .catch((err) => {
+        console.log(err, "catch error");
+      });
+  }, []);
+
+  console.log(songs, "testtest");
+
+
+
 return (
-<div>
-<header>
-  <h1>TOP 10</h1>
-</header>
-  <div className="song-container">
-    <div className="container1">
-    <p > Aloooo </p>
-    </div>
-    <hr></hr>
-    <div className="container2">
-    <p> banana </p>
-    </div>
-    </div>
-</div>
+     <div>
+      <SongCard songs={songs} setSongs={setSongs} /> 
+           </div>
+
 )
 }
+
 
 export default Home;
