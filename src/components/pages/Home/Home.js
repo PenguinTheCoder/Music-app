@@ -30,10 +30,23 @@ const Home = () => {
 
 
 return (
-     <div>
-      <SongCard songs={songs} setSongs={setSongs} /> 
+  <div className="title">
+      <h1>TOP 10</h1>
+  <div className="wrapper">
+     <div className="patkica">
+        {
+          songs && songs.tracks.data.map((song,i) => {
+            console.log(song, "pjesma");
+            return(
+              <div>
+               <SongCard song={song} setSongs={setSongs} />
+                 </div>
+            )
+          })
+        }
            </div>
-
+           </div>
+           </div>
 )
 }
 

@@ -1,12 +1,6 @@
-.title {
-    display: flex;
-    justify-content: center;
-}
-
 .card-wrapper {
     display: flex;
     flex-direction: column;
-    position:absolute;
     justify-content: center;
   border: 1px solid black;
   padding: 1rem;
@@ -17,7 +11,7 @@
 .edit {
   cursor: pointer;
   display: block;
-  width: 100%;
+  width: 30%;
   border: 1px solid black;
   border-radius: 32px;
   padding: 0.5rem;

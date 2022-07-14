@@ -3,26 +3,21 @@ import {useState} from "react";
 import "./SongCard.css";
 import Modal from "../Modal/Modal.js";
 
-const SongCard = ({songs, setSongs, song}) => {
+const SongCard = ({ song, setSongs}) => {
 
     const [openModal, setOpenModal] = useState(false)
 
 
     return(
-<div>
-    <div className="title">
-        <header>
-      <h1>TOP 10</h1>
-        </header>
-        </div>
+    <div>
         <div className="card-wrapper">
       <div>
-        <img src={songs && songs.tracks.data.map(song => {return song.album.cover_small})} alt="song img" />
+        <img src={song.album.cover_small} alt="song img" />
       </div>
       <div>
         <div>
-          <p className="artist">Artist: {songs && songs.tracks.data.map(song => {return song.artist.name})}</p>
-          <p className="songName">Song Name: {songs && songs.tracks.data.map(song => {return song.title} )}</p>
+          <p className="artist">Artist: {song.artist.name}</p>
+          <p className="songName">Song Name: { song.title} </p>
           <div className="card-button-wrapper">
           <buttton className="edit" onClick={() => {setOpenModal(true)}}>Info</buttton>
           
@@ -31,7 +26,7 @@ const SongCard = ({songs, setSongs, song}) => {
       </div>
     </div>
     <div className="ispod">
-    {openModal && <Modal closeModal={setOpenModal}/>}
+    {openModal && <Modal closeModal={setOpenModal} song={song}/>}
     </div>
     </div>
 

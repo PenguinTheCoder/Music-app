@@ -1,7 +1,7 @@
 import React from "react";  
 import "./Modal.css"
 
-const Modal = ({closeModal}) => {
+const Modal = ({closeModal, song}) => {
     return (
         <div className="modalBackground">
             <div className="modalContainer">
@@ -9,10 +9,11 @@ const Modal = ({closeModal}) => {
         <button onClick={() => closeModal(false)}>X</button>
                  </div>
           <div className="title">
-        <h1> Name of the song</h1>
+        <h1> {song.title} </h1>
         </div>
         <div className="body">
-            <p>Artist</p>
+            <p>{song.artist.name}</p>
+            <p>{song.artist.name}</p>
         </div>
     </div>
     </div>
