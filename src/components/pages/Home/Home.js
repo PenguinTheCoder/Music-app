@@ -47,23 +47,23 @@ const Home = () => {
 return (
   <div className="title">
       <h1>TOP 10</h1>
-      <select className="selectSpace" onChange={handleSort}>
-      <option >Longest</option>
-      <option >Shortest</option>  
-      </select>
+          <select className="selectSpace" onChange={handleSort}>
+               <option >Longest</option>
+               <option >Shortest</option>  
+          </select>
   <div className="wrapper">
      <div className="songContainer">
-        {
-          songs && songs.tracks.data.map((song,i) => {
-            console.log(song, "pjesma");
-            return(
-              <div>
-               <SongCard song={song} setSongs={setSongs} />
-                 </div>
-               )
-            }
-          )
-        }
+                {
+                  songs && songs.tracks.data.map((song,i) => {
+                    console.log(song, "pjesma");
+                    return(
+                      <div>
+                      <SongCard song={song} setSongs={setSongs} />
+                        </div>
+                      )
+                    }
+                  )
+                }
            </div>
      </div>
   </div>
