@@ -8,6 +8,20 @@ const Home = () => {
 
   const [songs, setSongs] = useState();
 
+  const [sortStatus, setSortStatus] = useState(true);
+
+  
+
+  const handleSort = () => {
+    if (sortStatus) {
+       songs && songs.tracks.data.sort((a, b) => a.duration - b.duration);
+        setSortStatus(!sortStatus);
+    } else {
+       songs && songs.tracks.data.sort((a, b) => b.duration - a.duration);
+        setSortStatus(!sortStatus);
+    }
+  }
+
 
   useEffect(() => {
     fetch("https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart", {
@@ -33,9 +47,10 @@ const Home = () => {
 return (
   <div className="title">
       <h1>TOP 10</h1>
-      {/* <select>
-      {songs && songs.tracks.data.sort((a, b) => a.duration - b.duration).map(song => <option>Shortest</option> )}
-      </select> */}
+      <select className="selectSpace" onChange={handleSort}>
+      <option >Longest</option>
+      <option >Shortest</option>  
+      </select>
   <div className="wrapper">
      <div className="songContainer">
         {
