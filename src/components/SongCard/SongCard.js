@@ -3,23 +3,23 @@ import {useState} from "react";
 import "./SongCard.css";
 import Modal from "../Modal/Modal.js";
 
-const SongCard = ({ song, setSongs}) => {
+const SongCard = ({ song }) => {
 
     const [openModal, setOpenModal] = useState(false)
 
 
     return(
-    <div>
+    <div className="openModal">
         <div className="card-wrapper">
       <div>
-        <img src={song.album.cover_small} alt="song img" />
+        <img className="photo" src={song.album.cover_medium} alt="song img" />
       </div>
       <div>
         <div>
           <p className="artist">Artist: {song.artist.name}</p>
           <p className="songName">Song Name: { song.title} </p>
           <div className="card-button-wrapper">
-          <buttton className="edit" onClick={() => {setOpenModal(true)}}>Info</buttton>
+          <buttton className="button1" onClick={() => {setOpenModal(true)}}>Info</buttton>
           
           </div>       
         </div>

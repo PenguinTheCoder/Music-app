@@ -8,6 +8,7 @@ const Home = () => {
 
   const [songs, setSongs] = useState();
 
+
   useEffect(() => {
     fetch("https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart", {
       method: "GET",
@@ -32,8 +33,11 @@ const Home = () => {
 return (
   <div className="title">
       <h1>TOP 10</h1>
+      {/* <select>
+      {songs && songs.tracks.data.sort((a, b) => a.duration - b.duration).map(song => <option>Shortest</option> )}
+      </select> */}
   <div className="wrapper">
-     <div className="patkica">
+     <div className="songContainer">
         {
           songs && songs.tracks.data.map((song,i) => {
             console.log(song, "pjesma");
