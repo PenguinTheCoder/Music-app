@@ -60,12 +60,13 @@ return (
               <div>
                <SongCard song={song} setSongs={setSongs} />
                  </div>
-            )
-          })
+               )
+            }
+          )
         }
            </div>
-           </div>
-           </div>
+     </div>
+  </div>
 )
 }
 
